@@ -1,5 +1,6 @@
 # ir_volume_control
 
+/* 
 - I'm controlling an audio amp with an Apple remote, and I wanted to make a rotary volume to complement the Apple remote.
 - Simple solution by connecting rotary encoder and IR transmission module.
 - Reading the rotation direction from the rotary encoder and sending the signal to the IR transmitting module.
@@ -20,3 +21,5 @@ Play button: 77E1FABF.
 
 
 https://www.leejeonghwan.com/5859
+
+*/

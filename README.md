@@ -2,9 +2,12 @@
 
 - I'm controlling an audio amp with an Apple remote, and I wanted to make a rotary volume to complement the Apple remote.
 
-– Simple solution by connecting rotary encoder and IR transmission module.
+- Simple solution by connecting rotary encoder and IR transmission module.
+
 – Reading the rotation direction from the rotary encoder and sending the signal to the IR transmitting module.
+
 – I tried to merge the code published on github (the old code did not work as the library was updated)
+
 – I checked the Apple remote control transmission code (I installed the IR receiving module first and read the button value)
 
 

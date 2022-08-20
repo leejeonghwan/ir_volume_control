@@ -1,0 +1,43 @@
+//http://www.leejeonghwan.com/
+
+#include <IRremote.h>
+IRsend irsend;
+
+#define volumeUp 17
+#define volumeDown 18
+
+int val;
+int encoder0PinA = 6;
+int encoder0PinB = 7;
+int encoder0Pos = 0;
+int encoder0PinALast = LOW;
+int n = LOW;
+
+static int cero=0;
+long unsigned int irCode;
+
+int cmdReceived;
+
+void setup(){
+  IrSender.begin(3, ENABLE_LED_FEEDBACK);
+  Serial.begin(9600);
+  pinMode (encoder0PinA, INPUT);
+  pinMode (encoder0PinB, INPUT);
+}
+
+void loop(){
+   n = digitalRead(encoder0PinA);
+  if ((encoder0PinALast == LOW) && (n == HIGH)) {
+    if (digitalRead(encoder0PinB) == LOW) {
+      encoder0Pos--;
+      IrSender.sendNEC(0x77E130BF,32);
+      Serial.println ("volume down");
+    } else {
+      IrSender.sendNEC(0x77E150BF,32);
+      Serial.println ("volume up");
+      encoder0Pos++;
+    }
+    Serial.println (encoder0Pos);
+  }
+  encoder0PinALast = n;
+}
